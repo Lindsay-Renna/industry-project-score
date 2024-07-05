@@ -9,9 +9,53 @@ import Welcome from "./pages/Welcome/Welcome";
 import Completion from "./pages/Completion/Completion";
 import Footer from "./Footer/Footer";
 
+import rightArrow from "./assets/right-arrow.svg";
+import leftArrow from "./assets/left-arrow.svg";
+
 function App() {
 	const [modalOpen, setModalOpen] = useState(false);
+	const [showLeaderboard, setShowLeaderboard] = useState(true);
 
+	const toggleLeaderboard = () => {
+		setShowLeaderboard((prev) => !prev);
+	};
+
+	return (
+		<>
+			<Header setModalOpen={setModalOpen} />
+			<div className="homepage">
+				<img
+					src="/src/assets/score-homepage-cropped.png"
+					alt="score home-page"
+				/>
+			</div>
+			<Modal modalOpen={modalOpen} setModalOpen={setModalOpen}>
+				<section className="modal-children">
+					<div
+						className={`main-content ${showLeaderboard ? "" : "full-width"}`}
+					>
+						<Welcome />
+					</div>
+					{showLeaderboard && (
+						<aside className="leaderboard-section">
+							<Leaderboard />
+						</aside>
+					)}
+					<button
+						onClick={toggleLeaderboard}
+						className="toggle-leaderboard-button"
+					>
+						<img
+							src={showLeaderboard ? rightArrow : leftArrow}
+							alt="Double Arrow"
+							height="20"
+							width="20"
+						/>
+					</button>
+				</section>
+			</Modal>
+		</>
+	);
 	return (
 		<>
 			<Header setModalOpen={setModalOpen} />

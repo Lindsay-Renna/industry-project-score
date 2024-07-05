@@ -22,13 +22,8 @@ function App() {
 				/>
 			</div>
 			<Modal modalOpen={modalOpen} setModalOpen={setModalOpen}>
-
-				<div>Hello there</div>
-				<Leaderboard />
-
 				<Welcome />
-				{/* <Completion /> */}
-
+				<Leaderboard />
 			</Modal>
 		</>
 	);

@@ -2,7 +2,7 @@ import "./Leaderboard.scss";
 import { useState } from "react";
 import { leaderboard } from "../../lib/leaderboard";
 import { LeaderboardProfiles } from "../LeaderboardProfiles/LeaderboardProfiles";
-
+import ScoreLogo from "../../assets/Score-logo.svg";
 export const Leaderboard = () => {
   const [period, setPeriod] = useState(0);
 
@@ -13,7 +13,11 @@ export const Leaderboard = () => {
   return (
     <section className="leaderboard">
       <aside className="leaderboard__header">
-        <h2 className="leaderboard__heading">Leaderboard</h2>
+        
+        <h2 className="leaderboard__heading">
+          <img src={ScoreLogo} alt="Score Logo" height="20" />
+          <span className="leaderboard__heading--animation">Leaderboard</span>
+        </h2>
         <div className="leaderboard__duration">
           <button onClick={handleClick}  data-id="7" className="leaderboard__duration--button">
             Weekly

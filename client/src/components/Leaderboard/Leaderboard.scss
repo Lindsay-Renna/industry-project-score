@@ -3,6 +3,7 @@
     width: auto;
     height: 100%;
     display: flex;
+    padding: 0.5rem;
     color: #FFFFFF;
     overflow-y: auto;
     align-items: center;
@@ -11,7 +12,7 @@
     scroll-behavior: smooth;
     font-family: sans-serif;
     border-left: 1px solid #000000;
-    
+
 
     &__header {
         width: 100%;
@@ -23,22 +24,28 @@
     }
 
     &__heading {
+        gap: 0.5rem;
+        display: flex;
+        font-weight: 600;
         font-size: 1.25rem;
         line-height: 1.5rem;
-        font-weight: 600;
+        flex-direction: column;
+
     }
 
     &__duration {
         gap: 0.5rem;
         display: flex;
-        
+        font-size: 0.75rem;
+        padding-bottom: 0.5rem;
+
         &--button {
             all: unset;
             height: 2rem;
             padding: 0 1rem;
             border-radius: 10px;
             background-color: #006DFF;
-            
+
 
             &:hover {
                 background-color: #005ABE;
@@ -52,7 +59,7 @@
         gap: 0.5rem;
         display: flex;
         flex-direction: column;
-        
+
     }
 
 

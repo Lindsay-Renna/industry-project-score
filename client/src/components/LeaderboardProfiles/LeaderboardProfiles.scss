@@ -9,11 +9,10 @@
 }
 
 .profile {
-    width: 50%;
     gap: 1rem;
+    width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
 
     &:hover {
         padding: 0 1rem;
@@ -49,10 +48,11 @@
     }
 
     &__info {
+        text-align: left;;
         &--name {
+            margin: 0;
             font-size: 1rem;
             line-height: 1.25rem;
-            margin: 0;
         }
     }
 

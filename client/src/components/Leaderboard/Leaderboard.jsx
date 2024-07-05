@@ -4,45 +4,55 @@ import { leaderboard } from "../../lib/leaderboard";
 import { LeaderboardProfiles } from "../LeaderboardProfiles/LeaderboardProfiles";
 
 export const Leaderboard = () => {
-  const [duration, setDuration] = useState(0); 
+  const [period, setPeriod] = useState(0);
 
-  const filterLeaderboard = (duration) => {
-    const now = new Date();
-    return leaderboard.filter((profile) => {
-      const profileDate = new Date(profile.dt);
-      const diffInDays = (now - profileDate) / (1000 * 60 * 60 * 24);
-      return diffInDays <= duration;
-    });
+  const handleClick = (e) => {
+    setPeriod(e.target.dataset.id);
   };
-
-  const sortedLeaderboard = filterLeaderboard(duration).sort(
-    (a, b) => a.score - b.score
-  );
-
-  console.log(sortedLeaderboard)
 
   return (
     <section className="leaderboard">
       <aside className="leaderboard__header">
         <h2 className="leaderboard__heading">Leaderboard</h2>
         <div className="leaderboard__duration">
-          {[1, 7, 30].map((dur, index) => (
-            <button
-              key={index}
-              className="leaderboard__duration--button"
-              data-id={String(dur)}
-              onClick={() => setDuration(dur)}
-            >
-              {dur === 1 && "Daily"}
-              {dur === 7 && "Weekly"}
-              {dur === 30 && "Monthly"}
-            </button>
-          ))}
+          <button onClick={handleClick}  data-id="7" className="leaderboard__duration--button">
+            Weekly
+          </button>
+          <button onClick={handleClick} data-id="30" className="leaderboard__duration--button">
+            Monthly
+          </button>
+          <button onClick={handleClick} data-id="0" className="leaderboard__duration--button">
+            All-Time
+          </button>
         </div>
       </aside>
       <aside className="leaderboard__profiles">
-        <LeaderboardProfiles leaderboard={sortedLeaderboard} />
+        <LeaderboardProfiles
+          leaderboard={filterLeaderboard(leaderboard, period)}
+        />
       </aside>
     </section>
   );
 };
+
+function filterLeaderboard(data, between){
+  const today = new Date();
+  const previous = new Date(today);
+  previous.setDate(previous.getDate() - (between + 1));
+
+  let filter = data.filter(val => {
+      let userDate = new Date(val.dt);
+      if (between == 0) return val;
+      return previous <= userDate && today >= userDate;
+  })
+
+  // sort with asending order
+  return filter.sort((a, b) => {
+      if ( a.score === b.score){
+          return b.score - a.score;
+      } else{
+          return b.score - a.score;
+      }
+  })
+
+}

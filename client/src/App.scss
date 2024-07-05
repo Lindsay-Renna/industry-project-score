@@ -1,8 +1,11 @@
-#root {
-	max-width: 1280px;
-	margin: 0 auto;
-	padding: 2rem;
+@use "./styles/partials/global" as *;
+
+body {
+	margin: 0;
+	padding: 0;
 	text-align: center;
+	background-color: black;
+	font-family: "Inter";
 }
 
 .read-the-docs {
@@ -22,4 +25,10 @@
   }
 }
 
+
+.homepage {
+	background-color: black;
+	display: flex;
+	justify-content: center;
+}
 

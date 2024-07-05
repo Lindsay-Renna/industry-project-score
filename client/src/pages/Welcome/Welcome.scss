@@ -1,44 +1,42 @@
 @use "../../styles/partials/global" as *;
 
 .welcome {
-    display: flex;
-    flex-direction: row;
+	display: flex;
+	flex-direction: row;
 }
 
 .main {
-    width: 40vw;
-    height: 63vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+	display: flex;
+	flex-grow: 1;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 
-    &__text {
-        color: $ScoreGrey;
-        font-family: 'Dosis' sans-serif;
-        font-size: 1.5rem;
-        font-weight: bold;
-        text-align: center;
+	&__text {
+		color: $ScoreGrey;
+		font-family: "Dosis" sans-serif;
+		font-size: 1.5rem;
+		font-weight: bold;
+		text-align: center;
 
-        @include tablet {
-            font-size: 1.5625rem;
-        }
-    }
+		@include tablet {
+			font-size: 1.5625rem;
+		}
+	}
 
-    &__button {
-        background-color: $ScoreBlue;
-        border: none;
-        border-radius: 4px;
-        color: white;
-        text-align: center;
-        cursor: pointer;
-        font-size: 0.8125rem;
-        width: 10vw;
+	&__button {
+		background-color: $ScoreBlue;
+		border: none;
+		border-radius: 4px;
+		color: white;
+		text-align: center;
+		cursor: pointer;
+		font-size: 0.8125rem;
+		width: 10vw;
 
-        @include tablet {
-            font-size: 0.875rem;
-            padding: 0.5rem 1rem;
-            margin-left: 11.25rem;
-        }
-    }
-
+		@include tablet {
+			font-size: 0.875rem;
+			padding: 0.5rem 1rem;
+		}
+	}
 }

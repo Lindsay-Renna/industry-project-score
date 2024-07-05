@@ -1,0 +1,47 @@
+[
+    {
+        "id": 0,
+        "question": "What year was the National Hockey League (NHL) founded?", 
+        "choice1": 1920,
+        "choice2": 1930,
+        "choice3": 1917,
+        "choice4": 1940,
+        "answer": 1917
+    },
+    {
+        "id": 1,
+        "question": "How many active teams are there in the NHL as of 2024?", 
+        "choice1": 28,
+        "choice2": 30,
+        "choice3": 32,
+        "choice4": 33,
+        "answer": 32
+    },
+    {
+        "id": 2,
+        "question": "Which NHL team’s operations were suspended in 2024 leading to a new team in Salt Lake City?", 
+        "choice1": "Boston Bruins",
+        "choice2": "Arizona Coyotes",
+        "choice3": "Seattle Kraken",
+        "choice4": "Vegas Golden Knights",
+        "answer": "Arizona Coyotes"
+    },
+    {
+        "id": 3,
+        "question": "Which team won the first NHL title and also the 1918 Stanley Cup?", 
+        "choice1": "Toronto Arenas",
+        "choice2": "Montreal Canadiens",
+        "choice3": "Ottawa Senators",
+        "choice4": "Vancouver Millionaires",
+        "answer": "Toronto Arenas"
+    },
+    {
+        "id": 4,
+        "question": "How many Stanley Cups did the Edmonton Oilers win with Wayne Gretzky?", 
+        "choice1": 7,
+        "choice2": 6,
+        "choice3": 5,
+        "choice4": 4,
+        "answer": 4
+    }
+]

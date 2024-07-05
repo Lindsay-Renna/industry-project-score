@@ -43,16 +43,17 @@ function QA() {
   
     return `00:${seconds}`
   }
-  
 
   return (
     <section>
         <div className="QA__clock">
             <CountdownCircleTimer
             isPlaying
+            key={clicked}
             duration={30}
             colors={['#004777', '#F7B801', '#A30000', '#A30000']}
-            colorsTime={[7, 5, 2, 0]} >
+            colorsTime={[7, 5, 2, 0]}
+             >
             {({ remainingTime }) => children({remainingTime})}
             </CountdownCircleTimer>
         </div>

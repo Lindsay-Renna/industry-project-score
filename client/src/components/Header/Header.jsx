@@ -22,6 +22,11 @@ function Header({ setModalOpen }) {
 						<button className="header__button">
 							<span>Download the App</span>
 						</button>
+						<img
+							className="user-icon"
+							src="/src/assets/user-icon.svg"
+							alt="score logo"
+						/>
 					</div>
 				</div>
 			</header>

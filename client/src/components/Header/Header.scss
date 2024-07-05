@@ -48,7 +48,7 @@
 
 			&--yellow {
 				background-color: $ScoreYellow;
-				animation: pulse 2.5s infinite;
+				animation: pulse 2s ease infinite;
 			}
 
 			&:hover {

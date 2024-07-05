@@ -3,21 +3,23 @@
 .completion {
     display: flex;
     flex-direction: row;
-}
 
-.main {
-    width: 40vw;
-    height: 63vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    &__main {
+        width: 40vw;
+        height: 63vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 
     &__text {
-        color: $ScoreGrey;
-        font-family: 'Dosis' sans-serif;
-        font-size: 1.5rem;
+        color: white;
+        font-family: 'Inter' sans-serif;
+        font-size: 3rem;
         font-weight: bold;
         text-align: center;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
 
         @include tablet {
             font-size: 1.5625rem;

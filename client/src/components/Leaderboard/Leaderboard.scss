@@ -1,0 +1,60 @@
+.leaderboard {
+    flex: 1;
+    width: auto;
+    height: 100%;
+    display: flex;
+    color: #FFFFFF;
+    overflow-y: auto;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    scroll-behavior: smooth;
+    font-family: sans-serif;
+    border-left: 1px solid #000000;
+    
+
+    &__header {
+        width: 100%;
+        gap: 0.5rem;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &__heading {
+        font-size: 1.25rem;
+        line-height: 1.5rem;
+        font-weight: 600;
+    }
+
+    &__duration {
+        gap: 0.5rem;
+        display: flex;
+        
+        &--button {
+            all: unset;
+            height: 2rem;
+            padding: 0 1rem;
+            border-radius: 10px;
+            background-color: #006DFF;
+            
+
+            &:hover {
+                background-color: #005ABE;
+                transform: translateY(-2px);
+                transition: transform 0.2s ease;
+            }
+        }
+    }
+
+    &__profiles {
+        gap: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        
+    }
+
+
+
+}

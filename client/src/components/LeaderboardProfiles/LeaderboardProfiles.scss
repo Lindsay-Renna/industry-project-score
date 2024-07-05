@@ -1,0 +1,63 @@
+.rank-badge {
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    color: #1E1F21;
+    border-radius: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile {
+    gap: 1rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+        padding: 0 1rem;
+        border-radius: 25px;
+        background-color: #000000;
+        
+    }
+
+    &__details {
+        gap: 1rem;
+        display: flex;
+        align-items: center;
+
+        &--rank {
+            @extend .rank-badge;
+            background-color: #FFFFFF;
+        }
+
+        &--firstRank {
+            @extend .rank-badge;
+            background-color: gold;
+        }
+
+        &--secondRank {
+            @extend .rank-badge;
+            background-color: silver;
+        }
+
+        &--thirdRank {
+            @extend .rank-badge;
+            background-color: #CD7F32;
+        }
+    }
+
+    &__info {
+        text-align: left;;
+        &--name {
+            margin: 0;
+            font-size: 1rem;
+            line-height: 1.25rem;
+        }
+    }
+
+    &__item {
+        flex: 1;
+        text-align: right;
+    }
+}

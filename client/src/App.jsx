@@ -1,10 +1,13 @@
+import "./App.scss";
 import { useState } from "react";
 import Modal from "./components/Modal/Modal";
-import "./App.scss";
+import { Leaderboard } from "./components/Leaderboard/Leaderboard";
+
 import Header from "./components/Header/Header";
 import NavBar from "./components/NavBar/NavBar";
 import Welcome from "./pages/Welcome/Welcome";
 import Completion from "./pages/Completion/Completion";
+
 
 function App() {
 	const [modalOpen, setModalOpen] = useState(false);
@@ -19,11 +22,12 @@ function App() {
 				/>
 			</div>
 			<Modal modalOpen={modalOpen} setModalOpen={setModalOpen}>
-				<Welcome />
-				{/* <Completion /> */}
+				<Welcome/>
+				<Leaderboard />
 			</Modal>
 		</>
 	);
+
 }
 
 export default App;

@@ -1,3 +1,7 @@
 @forward "./mixins";
 @forward "./fonts";
 @forward "./variables";
+
+* {
+	font-family: Arial, Helvetica, sans-serif;
+}

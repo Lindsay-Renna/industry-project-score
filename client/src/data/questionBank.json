@@ -1,0 +1,117 @@
+[
+    {
+        "id": 0,
+        "question": "What year was the National Hockey League (NHL) founded?", 
+        "choices": [
+            {
+                "id": 0,
+                "choice": 1920
+            },
+            {
+                "id": 1,
+                "choice": 1930
+            },
+            {
+                "id": 2,
+                "choice": 1917
+            },
+            {
+                "id": 2,
+                "choice": 1940
+            }
+        ],
+        "answer": 1917
+    },
+    {
+        "id": 1,
+        "question": "How many active teams are there in the NHL as of 2024?", 
+        "choices": [
+            {
+                "id": 0,
+                "choice": 28
+            },
+            {
+                "id": 1,
+                "choice": 30
+            },
+            {
+                "id": 2,
+                "choice": 32
+            },
+            {
+                "id": 3,
+                "choice": 33
+            }
+        ],
+        "answer": 32
+    },
+    {
+        "id": 2,
+        "question": "Which NHL team’s operations were suspended in 2024 leading to a new team in Salt Lake City?", 
+        "choices": [
+            {
+                "id": 0,
+                "choice": "Boston Bruins"
+            },
+            {
+                "id": 1,
+                "choice": "Arizona Coyotes"
+            },
+            {
+                "id": 2,
+                "choice": "Seattle Kraken"
+            },
+            {
+                "id": 3,
+                "choice":"Vegas Golden Knights"
+            }
+        ],
+        "answer": "Arizona Coyotes"
+    },
+    {
+        "id": 3,
+        "question": "Which team won the first NHL title and also the 1918 Stanley Cup?", 
+        "choices": [
+            {
+                "id": 0,
+                "choice": "Toronto Arenas"
+            },
+            {
+                "id": 1,
+                "choice": "Montreal Canadiens"
+            },
+            {
+                "id": 2,
+                "choice": "Ottawa Senators"
+            },
+            {
+                "id": 3,
+                "choice": "Vancouver Millionaires"
+            }
+        ],
+        "answer": "Toronto Arenas"
+    },
+    {
+        "id": 4,
+        "question": "How many Stanley Cups did the Edmonton Oilers win with Wayne Gretzky?", 
+        "choices": [
+            {
+                "id": 0,
+                "choice": 7
+            },
+            {
+                "id": 1,
+                "choice": 6
+            },
+            {
+                "id": 2,
+                "choice": 5
+            },
+            {
+                "id": 3,
+                "choice": 4
+            }
+        ],
+        "answer": 4
+    }
+]

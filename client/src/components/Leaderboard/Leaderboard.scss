@@ -1,3 +1,41 @@
 .leaderboard {
     flex: 1;
+    font-family: sans-serif;
+
+    &__header {
+        gap: 1rem;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &__heading {
+        font-size: 2rem;
+        font-weight: 600;
+    }
+
+    &__duration {
+        gap: 0.5rem;
+        display: flex;
+        
+        &--button {
+            all: unset;
+            height: 2.5rem;
+            padding: 0 1rem;
+            color: #FFFFFF;
+            border-radius: 10px;
+            background-color: #006DFF;
+            
+
+            &:hover {
+                background-color: #005ABE;
+                transform: translateY(-2px);
+                transition: transform 0.2s ease;
+            }
+        }
+    }
+
+
+
 }

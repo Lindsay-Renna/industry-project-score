@@ -20,7 +20,10 @@ function App() {
 					Open Modal
 				</button>
 			</div>
-			<Modal modalOpen={modalOpen} setModalOpen={setModalOpen}></Modal>
+			<Modal modalOpen={modalOpen} setModalOpen={setModalOpen}>
+				<div>Hello there</div>
+				<Leaderboard />
+			</Modal>
 		</>
 	);
 

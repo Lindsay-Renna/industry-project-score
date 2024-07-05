@@ -1,9 +1,14 @@
 .leaderboard {
     flex: 1;
+    width: 100%;
+    height: 100%;
+    color: #FFFFFF;
+    overflow-y: auto;
+    scroll-behavior: smooth;
     font-family: sans-serif;
 
     &__header {
-        gap: 1rem;
+        gap: 0.5rem;
         display: flex;
         align-items: center;
         flex-direction: column;
@@ -11,7 +16,8 @@
     }
 
     &__heading {
-        font-size: 2rem;
+        font-size: 1.25rem;
+        line-height: 1.5rem;
         font-weight: 600;
     }
 
@@ -21,9 +27,8 @@
         
         &--button {
             all: unset;
-            height: 2.5rem;
+            height: 2rem;
             padding: 0 1rem;
-            color: #FFFFFF;
             border-radius: 10px;
             background-color: #006DFF;
             
@@ -34,6 +39,13 @@
                 transition: transform 0.2s ease;
             }
         }
+    }
+
+    &__profiles {
+        gap: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        
     }
 
 

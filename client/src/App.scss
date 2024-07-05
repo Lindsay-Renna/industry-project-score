@@ -5,7 +5,7 @@ body {
 	padding: 0;
 	text-align: center;
 	background-color: black;
-	@include flex-center-both;
+	font-family: "Inter";
 }
 
 .read-the-docs {
@@ -14,4 +14,6 @@ body {
 
 .homepage {
 	background-color: black;
+	display: flex;
+	justify-content: center;
 }

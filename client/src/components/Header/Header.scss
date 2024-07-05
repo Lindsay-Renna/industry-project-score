@@ -1,20 +1,25 @@
 @use "../../styles/partials/global" as *;
 
-header {
+.header {
 	height: 3.75rem;
 	background-color: #1e1f21;
 	@include flex-center-both;
-	justify-content: space-evenly;
 
-	.logo {
-		margin-right: 2rem;
+	&__wrapper {
+		@include flex-center-both;
+		width: 1000px;
+		gap: 1rem;
+	}
+
+	&__logo {
+		width: 6.875rem;
 		img {
 			width: 110px;
 			padding-top: 0.5rem;
 		}
 	}
 
-	.header__buttons {
+	&__buttons {
 		margin-left: 2rem;
 		@include flex-center-both;
 		gap: 1rem;

@@ -1,0 +1,26 @@
+@use '../../styles/partials/global' as *;
+
+.completion {
+    display: flex;
+    flex-direction: row;
+}
+
+.main {
+    width: 40vw;
+    height: 63vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &__text {
+        color: $ScoreGrey;
+        font-family: 'Dosis' sans-serif;
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-align: center;
+
+        @include tablet {
+            font-size: 1.5625rem;
+        }
+    }
+}

@@ -1,59 +1,86 @@
-import questions from "../../data/questionBank.json"
-import { useState } from "react";
-import "./QA.scss"
+import React, { useState, useEffect } from "react";
+import questions from "../../data/questionBank.json";
+import "./QA.scss";
+
+function QA() {
+  const [clicked, setClicked] = useState(false);
+  const [index, setIndex] = useState(0);
+  const [questionToDisplay, setQuestionToDisplay] = useState([]);
+  const [singleQuestion, setSingleQuestion] = useState({});
 
 
-function QA () {
-    const [clicked, setClicked] = useState(false);
-    const [index,setIndex] = useState(0)
+  useEffect(() => {
+    let numberOfQuestions = Math.floor(Math.random() * 5) + 1; 
+    setQuestionToDisplay(questions.slice(0, numberOfQuestions));
+    setSingleQuestion(questions[0]);
+  }, []);
 
-    let numberOfQuestions = Math.floor(Math.random()*5);
-    if(numberOfQuestions === 0){
-        numberOfQuestions++;
-    }
-    let questionToDisplay = questions.slice(0,numberOfQuestions);
-    const [singleQuestion, setSingleQuestion] = useState(questionToDisplay[0]);
+  const clickHandler = (answer, event) => {
+    if (!clicked) {
+      setClicked(true);
 
-    function getSingleQuestion (array,index){
-        setClicked(false);
-        console.log(singleQuestion);
-        setSingleQuestion(array.slice(index, index+1));
-        return true;
-    }
+      if (event.target.innerHTML == answer) {
+        event.target.classList.add("QA__button--green");
+      } else {
+        event.target.classList.add("QA__button--red");
+      }
 
-    const clickHandler = (answer) => {
-        setClicked(true);
-        let btnValue = event.target.innerHTML;
-        console.log(btnValue == answer)
-        if (btnValue == answer){
-            event.target.classList.add("QA__button--green")
-        }else{
-            event.target.classList.add("QA__button--red")
+      setTimeout(() => {
+        if (index < questionToDisplay.length - 1) {
+          setIndex(index + 1);
+          setSingleQuestion(questionToDisplay[index + 1]);
+          setClicked(false); 
+          event.target.classList.remove("QA__button--red");
+          event.target.classList.remove("QA__button--green");
         }
-        if(index < questionToDisplay.length){
-            setIndex(index+1);
-            getSingleQuestion(questionToDisplay,index);
-        }
+      }, 1000); 
     }
+  };
 
-    return (
-        <>
-            <section>
-                <h2 className="QA__title">{singleQuestion.question}</h2>
-                <article className="QA__button-container">
-                    <article className="QA__button-container--left">
-                        <button className="QA__button" onClick={() => !clicked?clickHandler(singleQuestion.answer):null}>{singleQuestion.choice1}</button>
-                        <button className="QA__button" onClick={() => !clicked?clickHandler(singleQuestion.answer):null}>{singleQuestion.choice2}</button>
-                    </article>
-                    <article className="QA__button-container--right">
-                        <button className="QA__button" onClick={() => !clicked?clickHandler(singleQuestion.answer):null}>{singleQuestion.choice3}</button>
-                        <button className="QA__button" onClick={() => !clicked?clickHandler(singleQuestion.answer):null}>{singleQuestion.choice4}</button>
-                    </article>
-                </article>
-            </section>
-
-        </>
-    )
+  return (
+    <section>
+      <h2 className="QA__title">{singleQuestion.question}</h2>
+      <article className="QA__button-container">
+        <article className="QA__button-container--left">
+          <button
+            className="QA__button"
+            onClick={(event) => clickHandler(singleQuestion.answer, event)}
+          >
+            {singleQuestion.choice1}
+          </button>
+          <button
+            className="QA__button"
+            onClick={(event) => clickHandler(singleQuestion.answer, event)}
+          >
+            {singleQuestion.choice2}
+          </button>
+        </article>
+        <article className="QA__button-container--right">
+          <button
+            className="QA__button"
+            onClick={(event) => clickHandler(singleQuestion.answer, event)}
+          >
+            {singleQuestion.choice3}
+          </button>
+          <button
+            className="QA__button"
+            onClick={(event) => clickHandler(singleQuestion.answer, event)}
+          >
+            {singleQuestion.choice4}
+          </button>
+        </article>
+      </article>
+    </section>
+  );
 }
 
 export default QA;
+
+
+
+
+
+
+
+
+

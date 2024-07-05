@@ -15,50 +15,7 @@ function App() {
 	const [modalOpen, setModalOpen] = useState(false);
 	const [showLeaderboard, setShowLeaderboard] = useState(true);
 
-<<<<<<< HEAD
 
-  const toggleLeaderboard = () => {
-    setShowLeaderboard((prev) => !prev);
-  };
-
-
-  return (
-    <>
-      <Header setModalOpen={setModalOpen} />
-      <div className="homepage">
-        <img
-          src="/src/assets/score-homepage-cropped.png"
-          alt="score home-page"
-        />
-      </div>
-      <Modal modalOpen={modalOpen} setModalOpen={setModalOpen}>
-        <section className="modal-children">
-          <div
-            className={`main-content ${showLeaderboard ? "" : "full-width"}`}
-          >
-            <Welcome />
-          </div>
-          {showLeaderboard && (
-            <aside className="leaderboard-section">
-              <Leaderboard />
-            </aside>
-          )}
-          <button
-            onClick={toggleLeaderboard}
-            className="toggle-leaderboard-button"
-          >
-            <img
-              src={showLeaderboard ? rightArrow : leftArrow}
-              alt="Double Arrow"
-              height="20"
-              width="20"
-            />
-          </button>
-        </section>
-      </Modal>
-    </>
-  );
-=======
 	const toggleLeaderboard = () => {
 		setShowLeaderboard((prev) => !prev);
 	};
@@ -101,7 +58,7 @@ function App() {
 			</Modal>
 		</>
 	);
->>>>>>> main
+
 }
 
 export default App;

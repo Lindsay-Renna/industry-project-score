@@ -6,20 +6,19 @@ import "./QA.scss"
 function QA () {
     const [clicked, setClicked] = useState(false);
     const [index,setIndex] = useState(0)
-    const [singleQuestion, setSingleQuestion] = useState(null);
 
     let numberOfQuestions = Math.floor(Math.random()*5);
     if(numberOfQuestions === 0){
         numberOfQuestions++;
     }
     let questionToDisplay = questions.slice(0,numberOfQuestions);
+    const [singleQuestion, setSingleQuestion] = useState(questionToDisplay[0]);
 
     function getSingleQuestion (array,index){
-        console.log(array.slice(index, index+1));
         setClicked(false);
-        console.log(index);
-        console.log(array.slice(index, index+1));
-        return array.slice(index, index+1);
+        console.log(singleQuestion);
+        setSingleQuestion(array.slice(index, index+1));
+        return true;
     }
 
     const clickHandler = (answer) => {
@@ -33,29 +32,26 @@ function QA () {
         }
         if(index < questionToDisplay.length){
             setIndex(index+1);
-            setSingleQuestion(getSingleQuestion(questionToDisplay,index));
+            getSingleQuestion(questionToDisplay,index);
         }
     }
 
     return (
         <>
-            {questionToDisplay.map((item) => {
-                return (
-                    <section>
-                        <h2 className="QA__title">{item.question}</h2>
-                        <article className="QA__button-container">
-                            <article className="QA__button-container--left">
-                                <button className="QA__button" onClick={() => !clicked?clickHandler(item.answer):null}>{item.choice1}</button>
-                                <button className="QA__button" onClick={() => !clicked?clickHandler(item.answer):null}>{item.choice2}</button>
-                            </article>
-                            <article className="QA__button-container--right">
-                                <button className="QA__button" onClick={() => !clicked?clickHandler(item.answer):null}>{item.choice3}</button>
-                                <button className="QA__button" onClick={() => !clicked?clickHandler(item.answer):null}>{item.choice4}</button>
-                            </article>
-                        </article>
-                    </section>
-                )
-            })}
+            <section>
+                <h2 className="QA__title">{singleQuestion.question}</h2>
+                <article className="QA__button-container">
+                    <article className="QA__button-container--left">
+                        <button className="QA__button" onClick={() => !clicked?clickHandler(singleQuestion.answer):null}>{singleQuestion.choice1}</button>
+                        <button className="QA__button" onClick={() => !clicked?clickHandler(singleQuestion.answer):null}>{singleQuestion.choice2}</button>
+                    </article>
+                    <article className="QA__button-container--right">
+                        <button className="QA__button" onClick={() => !clicked?clickHandler(singleQuestion.answer):null}>{singleQuestion.choice3}</button>
+                        <button className="QA__button" onClick={() => !clicked?clickHandler(singleQuestion.answer):null}>{singleQuestion.choice4}</button>
+                    </article>
+                </article>
+            </section>
+
         </>
     )
 }

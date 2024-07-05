@@ -1,0 +1,34 @@
+@use "./variables" as *;
+
+@mixin tablet {
+	@media (min-width: $tablet-breakpoint) {
+		@content;
+	}
+}
+
+@mixin desktop {
+	@media (min-width: $desktop-breakpoint) {
+		@content;
+	}
+}
+
+@mixin flex-center-both {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin box-shadow {
+	box-shadow: 0 2px 5px black;
+}
+
+@mixin flex-center-horizontal {
+	display: flex;
+	justify-content: center;
+}
+
+@mixin flex-center-both {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

@@ -1,0 +1,11 @@
+@use "../styles/partials/global" as *;
+
+.footer {
+	background-color: #1e1f21;
+	@include flex-center-both;
+	margin-top: 1rem;
+
+	img {
+		padding: 3rem 0;
+	}
+}

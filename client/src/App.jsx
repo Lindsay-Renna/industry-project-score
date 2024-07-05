@@ -7,7 +7,7 @@ import NavBar from "./components/NavBar/NavBar";
 import Welcome from "./pages/Welcome/Welcome";
 import Completion from "./pages/Completion/Completion";
 import Footer from "./Footer/Footer";
-import QA from "./components/QA/QA"
+import QA from "./components/QA/QA";
 import rightArrow from "./assets/right-arrow.svg";
 import leftArrow from "./assets/left-arrow.svg";
 
@@ -17,13 +17,12 @@ function App() {
 	const [getStarted, setGetStarted] = useState(false);
 	const [isFinished, setIsFinished] = useState(false);
 
-
 	const toggleLeaderboard = () => {
 		setShowLeaderboard((prev) => !prev);
 	};
 
 	return (
-		 <> 
+		<>
 			<Header setModalOpen={setModalOpen} />
 			<div className="homepage">
 				<img
@@ -37,9 +36,9 @@ function App() {
 					<div
 						className={`main-content ${showLeaderboard ? "" : "full-width"}`}
 					>
-						{!getStarted  && <Welcome setGetStarted={setGetStarted} />}
-						{(getStarted && !isFinished) && <QA setIsFinished={setIsFinished} />}
-						{isFinished && <Completion />}
+						{!getStarted && <Welcome setGetStarted={setGetStarted} />}
+						{getStarted && !isFinished && <QA setIsFinished={setIsFinished} />}
+						{isFinished && <Completion setModalOpen={setModalOpen} />}
 					</div>
 					{showLeaderboard && (
 						<aside className="leaderboard-section">

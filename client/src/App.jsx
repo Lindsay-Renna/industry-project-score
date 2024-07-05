@@ -2,13 +2,12 @@ import "./App.scss";
 import { useState } from "react";
 import Modal from "./components/Modal/Modal";
 import { Leaderboard } from "./components/Leaderboard/Leaderboard";
-
 import Header from "./components/Header/Header";
 import NavBar from "./components/NavBar/NavBar";
 import Welcome from "./pages/Welcome/Welcome";
 import Completion from "./pages/Completion/Completion";
 import Footer from "./Footer/Footer";
-
+import QA from "./components/QA/QA"
 import rightArrow from "./assets/right-arrow.svg";
 import leftArrow from "./assets/left-arrow.svg";
 
@@ -21,7 +20,7 @@ function App() {
 	};
 
 	return (
-		<>
+		 <> 
 			<Header setModalOpen={setModalOpen} />
 			<div className="homepage">
 				<img
@@ -36,6 +35,7 @@ function App() {
 						className={`main-content ${showLeaderboard ? "" : "full-width"}`}
 					>
 						<Welcome />
+						<QA />
 					</div>
 					{showLeaderboard && (
 						<aside className="leaderboard-section">

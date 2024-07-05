@@ -1,0 +1,45 @@
+@use "../../styles/partials/fonts";
+@use "../../styles/partials/global";
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.QA{
+    &__title{
+        color: $ScoreBlue;
+        font-weight: 600;
+        font-size: 3rem;
+    }
+
+    &__button{
+        background-color: $ScoreYellow;
+        color: $ScoreBlue;
+        font-weight: 600;
+        font-size: 2.25rem;
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+        border-radius: 10px;
+        width: 15rem;
+        height: 9rem;
+        &--green{
+            background-color: greenyellow;
+        }
+        &--red{
+            background-color: red;
+        }
+    }
+    &__button-container{
+        display: flex;
+        justify-content: space-evenly;
+        &--left, &--right{
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+    }
+    &__clock{
+        margin-left: 10rem;
+        width: 11rem;
+        border-radius: 50%;
+        background-color: $NavFont;
+    }
+}
+

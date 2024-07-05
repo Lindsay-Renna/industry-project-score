@@ -1,17 +1,29 @@
 @use "../../styles/partials/global" as *;
 
 .modal {
-	height: 70vh;
-	width: 70vw;
-	border-radius: 4px;
-	box-shadow: 0 2px 5px black;
-	padding: 1rem;
+	padding: 1rem 1rem 2.5rem 1rem;
 	box-sizing: border-box;
 	position: fixed;
 	background-color: $Nav-menu-black;
-	top: 45%;
+	height: 100%;
+	width: 100%;
+	z-index: 1000;
+	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
+
+	@include tablet {
+		height: 70vh;
+		width: 70vw;
+		border-radius: 4px;
+		box-shadow: 0 2px 5px black;
+		padding: 1rem;
+		box-sizing: border-box;
+		position: fixed;
+		top: 45%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
 
 	&:focus {
 		outline: none;
@@ -63,16 +75,14 @@
 }
 
 .modalOverlay {
-	@include tablet {
-		position: fixed;
-		background-color: rgba(0, 0, 0, 0.4);
-		@include flex-center-both;
-		z-index: 1001;
-		height: 100%;
-		width: 100%;
-		top: 0;
-		left: 0;
-	}
+	position: fixed;
+	background-color: rgba(0, 0, 0, 0.4);
+	@include flex-center-both;
+	z-index: 1001;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
 }
 
 .cancel-button {

@@ -1,15 +1,13 @@
-@use "./styles/partials/global" as *;
-
 body {
-	margin: 0;
-	padding: 0;
-	text-align: center;
-	background-color: black;
-	font-family: "Inter";
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background-color: black;
+  font-family: "Inter";
 }
 
 .read-the-docs {
-	color: rgba(249, 249, 249, 0.65);
+  color: rgba(249, 249, 249, 0.65);
 }
 
 .mock {
@@ -21,14 +19,61 @@ body {
 
   &__left {
     height: 100%;
-    height: 100%;
+    width: 100%;
   }
 }
 
-
 .homepage {
-	background-color: black;
-	display: flex;
-	justify-content: center;
+  background-color: black;
+  display: flex;
+  justify-content: center;
 }
 
+.toggle-leaderboard-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  background-color: #000000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.toggle-leaderboard-button:hover {
+  background-color: #0056b3;
+}
+
+.modal-children {
+  display: flex;
+  width: 100%;
+  position: relative;
+}
+
+.main-content {
+  flex: 1;
+  transition: width 0.3s ease;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.leaderboard-section {
+  width: 500px;
+  border-left: 2px solid black;
+  transition: width 0.3s ease;
+}
+
+.hide-leaderboard {
+  display: none;
+}
+
+.show-leaderboard {
+  display: block;
+  width: 300px;
+}

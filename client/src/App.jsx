@@ -14,6 +14,7 @@ import leftArrow from "./assets/left-arrow.svg";
 function App() {
 	const [modalOpen, setModalOpen] = useState(false);
 	const [showLeaderboard, setShowLeaderboard] = useState(true);
+	const [numberOfQuestions, setNumberOfQuestions] = useState(0);
 
 
 	const toggleLeaderboard = () => {
@@ -35,8 +36,8 @@ function App() {
 					<div
 						className={`main-content ${showLeaderboard ? "" : "full-width"}`}
 					>
-						<Welcome />
-						<QA />
+						<Welcome numberOfQuestions={numberOfQuestions}/>
+						<QA setNumberOfQuestions={setNumberOfQuestions}/>
 					</div>
 					{showLeaderboard && (
 						<aside className="leaderboard-section">

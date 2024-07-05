@@ -3,7 +3,7 @@ import questions from "../../data/questionBank.json";
 import { CountdownCircleTimer } from 'react-countdown-circle-timer'
 import "./QA.scss";
 
-function QA() {
+function QA({ setNumberOfQuestions }) {
   const [clicked, setClicked] = useState(false);
   const [index, setIndex] = useState(0);
   const [questionToDisplay, setQuestionToDisplay] = useState([]);
@@ -14,7 +14,8 @@ function QA() {
     let numberOfQuestions = Math.floor(Math.random() * 5) + 1; 
     setQuestionToDisplay(questions.slice(0, numberOfQuestions));
     setSingleQuestion(questions[0]);
-  }, []);
+    setNumberOfQuestions(numberOfQuestions);
+  }, [setNumberOfQuestions]);
 
   const clickHandler = (answer, event) => {
     if (!clicked) {

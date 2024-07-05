@@ -1,16 +1,19 @@
 import { useState } from "react";
 import Modal from "./components/Modal/Modal";
 import "./App.scss";
+import Header from "./components/Header/Header";
 
 function App() {
 	const [modalOpen, setModalOpen] = useState(false);
 
 	return (
 		<>
-			<div>
-				<p className="read-the-docs">
-					Click on the Vite and React logos to learn more
-				</p>
+			<Header />
+			<div className="homepage">
+				<img
+					src="/src/assets/score-homepage-cropped.png"
+					alt="score home-page"
+				/>
 				<button
 					onClick={() => {
 						setModalOpen(true);

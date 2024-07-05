@@ -29,6 +29,7 @@ function App() {
 					alt="score home-page"
 				/>
 			</div>
+			<Footer />
 			<Modal modalOpen={modalOpen} setModalOpen={setModalOpen}>
 				<section className="modal-children">
 					<div
@@ -53,25 +54,6 @@ function App() {
 						/>
 					</button>
 				</section>
-			</Modal>
-		</>
-	);
-	return (
-		<>
-			<Header setModalOpen={setModalOpen} />
-			<div className="homepage">
-				<img
-					src="/src/assets/score-homepage-cropped.png"
-					alt="score home-page"
-				/>
-			</div>
-			<Footer />
-			<Modal modalOpen={modalOpen} setModalOpen={setModalOpen}>
-				<div>Hello there</div>
-				<Leaderboard />
-
-				<Welcome />
-				{/* <Completion /> */}
 			</Modal>
 		</>
 	);

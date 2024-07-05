@@ -35,6 +35,11 @@
             gap: 2rem;
         }
     }
-    
+    &__clock{
+        margin-left: 10rem;
+        width: 11rem;
+        border-radius: 50%;
+        background-color: $NavFont;
+    }
 }
 

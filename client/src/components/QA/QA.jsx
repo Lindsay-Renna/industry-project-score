@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import questions from "../../data/questionBank.json";
+import { CountdownCircleTimer } from 'react-countdown-circle-timer'
 import "./QA.scss";
 
 function QA() {
@@ -37,8 +38,24 @@ function QA() {
     }
   };
 
+  const children = ({ remainingTime }) => {
+    const seconds = remainingTime % 60
+  
+    return `00:${seconds}`
+  }
+  
+
   return (
     <section>
+        <div className="QA__clock">
+            <CountdownCircleTimer
+            isPlaying
+            duration={30}
+            colors={['#004777', '#F7B801', '#A30000', '#A30000']}
+            colorsTime={[7, 5, 2, 0]} >
+            {({ remainingTime }) => children({remainingTime})}
+            </CountdownCircleTimer>
+        </div>
       <h2 className="QA__title">{singleQuestion.question}</h2>
       <article className="QA__button-container">
         <article className="QA__button-container--left">

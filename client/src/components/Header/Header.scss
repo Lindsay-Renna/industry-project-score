@@ -1,5 +1,11 @@
 @use "../../styles/partials/global" as *;
 
+.header__container {
+	position: -webkit-sticky; //safari
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+}
 .header {
 	height: 3.75rem;
 	background-color: #1e1f21;
@@ -41,7 +47,8 @@
 			@include flex-center-both;
 
 			&--yellow {
-				color: $ScoreYellow;
+				background-color: $ScoreYellow;
+				animation: pulse 2s ease infinite;
 			}
 
 			&:hover {
@@ -52,5 +59,17 @@
 				outline: 4px auto -webkit-focus-ring-color;
 			}
 		}
+	}
+}
+
+@keyframes pulse {
+	0% {
+		box-shadow: 0 0 0 0 rgba(88, 120, 243, 1);
+	}
+	70% {
+		box-shadow: 0 0 0 10px rgba(88, 120, 243, 0);
+	}
+	100% {
+		box-shadow: 0 0 0 50px rgba(88, 120, 243, 0);
 	}
 }

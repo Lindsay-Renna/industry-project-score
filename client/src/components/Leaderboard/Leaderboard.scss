@@ -1,0 +1,59 @@
+.leaderboard {
+	flex: 1;
+	width: auto;
+	height: 100%;
+	display: flex;
+	padding: 0.5rem;
+	color: #ffffff;
+	overflow-y: auto;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	scroll-behavior: smooth;
+	font-family: sans-serif;
+
+	&__header {
+		width: 100%;
+		gap: 0.5rem;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	&__heading {
+		gap: 0.5rem;
+		display: flex;
+		font-weight: 600;
+		font-size: 1.25rem;
+		line-height: 1.5rem;
+		flex-direction: column;
+	}
+
+	&__duration {
+		gap: 0.5rem;
+		display: flex;
+		font-size: 0.75rem;
+		padding-bottom: 0.5rem;
+
+		&--button {
+			all: unset;
+			height: 2rem;
+			padding: 0 1rem;
+			border-radius: 10px;
+			background-color: #006dff;
+
+			&:hover {
+				background-color: #005abe;
+				transform: translateY(-2px);
+				transition: transform 0.2s ease;
+			}
+		}
+	}
+
+	&__profiles {
+		gap: 0.5rem;
+		display: flex;
+		flex-direction: column;
+	}
+}

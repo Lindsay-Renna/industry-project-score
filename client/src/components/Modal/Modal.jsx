@@ -39,7 +39,7 @@ function Modal({ modalOpen, setModalOpen, children }) {
 				<img src="/src/assets/icons/close-x.svg" alt="close x" />
 			</div>
 			<div className="modal__children">{children}</div>
-			<div className="modal__buttons">
+			{/* <div className="modal__buttons">
 				<button
 					className="cancel-button"
 					onClick={() => {
@@ -48,7 +48,7 @@ function Modal({ modalOpen, setModalOpen, children }) {
 				>
 					Cancel
 				</button>
-			</div>
+			</div> */}
 		</ReactModal>
 	);
 }

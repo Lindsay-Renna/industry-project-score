@@ -1,0 +1,110 @@
+.rank-badge {
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    color: #1E1F21;
+    border-radius: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile {
+    gap: 4rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    animation: fadeInUp 1s ease;
+
+
+    &:hover {
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        padding: 0 0.5rem;
+        border-radius: 25px;
+        background-color: #000000;
+        transition: background-color 0.2s ease;
+    }
+
+    &__details {
+        gap: 1rem;
+        display: flex;
+        align-items: center;
+
+        &--rank {
+            @extend .rank-badge;
+            background: linear-gradient(135deg, #ffffff, #e6e6e6);
+        }
+
+        &--firstRank {
+            background: linear-gradient(135deg, #FFD700, #FFEC8B);
+            border: 2px solid #DAA520;
+        }
+
+        &--secondRank {
+            background: linear-gradient(135deg, #C0C0C0, #DCDCDC);
+            border: 2px solid #A9A9A9;
+        }
+
+        &--thirdRank {
+            background: linear-gradient(135deg, #CD7F32, #E1A95F);
+            border: 2px solid #8B4513;
+        }
+    }
+
+    &__info {
+        text-align: left;
+
+        &--name {
+            margin: 0;
+            font-size: 1rem;
+            line-height: 1.25rem;
+        }
+    }
+
+    &__item {
+        flex: 1;
+        gap: 1rem;
+        width: 100%;
+        display: flex;
+        text-align: right;
+        align-items: center;
+        justify-content: flex-end;
+
+        &--badge {
+            display: inline-block;
+            margin-left: 0.5rem;
+            padding: 0.3rem 0.7rem;
+            background-color: rgba(125, 125, 125, 0.2);
+            color: #FFFFFF;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            white-space: nowrap;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}

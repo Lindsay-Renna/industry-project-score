@@ -13,13 +13,13 @@
 	transform: translate(-50%, -50%);
 	overflow-y: auto;
 	scroll-behavior: smooth;
-	
+
 	@include tablet {
-		height: 70vh;
-		width: 70vw;
+		height: 75vh;
+		width: 75vw;
 		border-radius: 4px;
 		box-shadow: 0 2px 5px black;
-		padding: 1rem;
+		padding: 0.5rem 1rem;
 		box-sizing: border-box;
 		position: fixed;
 		top: 45%;

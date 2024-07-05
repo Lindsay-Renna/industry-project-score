@@ -14,6 +14,9 @@ import leftArrow from "./assets/left-arrow.svg";
 function App() {
 	const [modalOpen, setModalOpen] = useState(false);
 	const [showLeaderboard, setShowLeaderboard] = useState(true);
+	const [getStarted, setGetStarted] = useState(false);
+	const [isFinished, setIsFinished] = useState(false);
+
 
 	const toggleLeaderboard = () => {
 		setShowLeaderboard((prev) => !prev);
@@ -34,8 +37,9 @@ function App() {
 					<div
 						className={`main-content ${showLeaderboard ? "" : "full-width"}`}
 					>
-						<Welcome />
-						<QA />
+						{!getStarted  && <Welcome setGetStarted={setGetStarted} />}
+						{(getStarted && !isFinished) && <QA setIsFinished={setIsFinished} />}
+						{isFinished && <Completion />}
 					</div>
 					{showLeaderboard && (
 						<aside className="leaderboard-section">

@@ -1,17 +1,20 @@
 import React, { useState, useEffect } from "react";
 import questions from "../../data/questionBank.json";
-import { CountdownCircleTimer } from 'react-countdown-circle-timer'
+import { CountdownCircleTimer } from "react-countdown-circle-timer";
 import "./QA.scss";
+import { useTypewriter } from "../hooks/useTypewriter";
 
-function QA() {
+function QA({
+  setIsFinished
+}) {
   const [clicked, setClicked] = useState(false);
   const [index, setIndex] = useState(0);
   const [questionToDisplay, setQuestionToDisplay] = useState([]);
   const [singleQuestion, setSingleQuestion] = useState({});
-
+  const [key, setKey] = useState(0); 
 
   useEffect(() => {
-    let numberOfQuestions = Math.floor(Math.random() * 5) + 1; 
+    let numberOfQuestions = Math.floor(Math.random() * 5) + 1;
     setQuestionToDisplay(questions.slice(0, numberOfQuestions));
     setSingleQuestion(questions[0]);
   }, []);
@@ -30,33 +33,38 @@ function QA() {
         if (index < questionToDisplay.length - 1) {
           setIndex(index + 1);
           setSingleQuestion(questionToDisplay[index + 1]);
-          setClicked(false); 
+          setClicked(false);
           event.target.classList.remove("QA__button--red");
           event.target.classList.remove("QA__button--green");
+        } else {
+          setIsFinished(true);
         }
-      }, 1000); 
+      }, 1000);
+
+      setKey(prevKey => prevKey + 1);
     }
   };
 
-  const children = ({ remainingTime }) => {
-    const seconds = remainingTime % 60
-  
-    return `00:${seconds}`
-  }
-  
+  const formatTime = (time) => {
+    const seconds = time % 60;
+    return `00:${seconds < 10 ? `0${seconds}` : `${seconds}`}`;
+  };
 
   return (
-    <section>
-        <div className="QA__clock">
-            <CountdownCircleTimer
-            isPlaying
-            duration={30}
-            colors={['#004777', '#F7B801', '#A30000', '#A30000']}
-            colorsTime={[7, 5, 2, 0]} >
-            {({ remainingTime }) => children({remainingTime})}
-            </CountdownCircleTimer>
-        </div>
-      <h2 className="QA__title">{singleQuestion.question}</h2>
+    <section className="QA">
+      <div className="QA__clock">
+        <CountdownCircleTimer
+          size={100}
+          key={key} 
+          isPlaying
+          duration={20}
+          colors={["#006dff", "#Ffbf00", "#A30000", "#A30000"]}
+          colorsTime={[7, 5, 2, 0]}
+        >
+          {({ remainingTime }) => formatTime(remainingTime)}
+        </CountdownCircleTimer>
+      </div>
+      <h2 className="QA__title">{useTypewriter(singleQuestion.question)}</h2>
       <article className="QA__button-container">
         <article className="QA__button-container--left">
           <button
@@ -92,12 +100,3 @@ function QA() {
 }
 
 export default QA;
-
-
-
-
-
-
-
-
-

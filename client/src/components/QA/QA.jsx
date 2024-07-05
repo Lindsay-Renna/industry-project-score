@@ -65,6 +65,7 @@ function QA({
         </CountdownCircleTimer>
       </div>
       <h2 className="QA__title">{useTypewriter(singleQuestion.question)}</h2>
+
       <article className="QA__button-container">
         <article className="QA__button-container--left">
           <button

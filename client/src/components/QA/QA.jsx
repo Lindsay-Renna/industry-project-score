@@ -5,16 +5,18 @@ import "./QA.scss";
 import { useTypewriter } from "../hooks/useTypewriter";
 
 function QA({
-  setIsFinished
+  setIsFinished,
+  numberOfQuestions
 }) {
   const [clicked, setClicked] = useState(false);
   const [index, setIndex] = useState(0);
   const [questionToDisplay, setQuestionToDisplay] = useState([]);
   const [singleQuestion, setSingleQuestion] = useState({});
   const [key, setKey] = useState(0); 
+  const [isAnswered, setIsAnswered] = useState(false);
 
+  
   useEffect(() => {
-    let numberOfQuestions = Math.floor(Math.random() * 5) + 1;
     setQuestionToDisplay(questions.slice(0, numberOfQuestions));
     setSingleQuestion(questions[0]);
   }, []);
@@ -38,6 +40,7 @@ function QA({
           event.target.classList.remove("QA__button--green");
         } else {
           setIsFinished(true);
+
         }
       }, 1000);
 

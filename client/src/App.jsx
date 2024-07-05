@@ -10,17 +10,20 @@ import Footer from "./Footer/Footer";
 import QA from "./components/QA/QA"
 import rightArrow from "./assets/right-arrow.svg";
 import leftArrow from "./assets/left-arrow.svg";
+import Questions from "./data/questionBank.json";
 
 function App() {
 	const [modalOpen, setModalOpen] = useState(false);
 	const [showLeaderboard, setShowLeaderboard] = useState(true);
 	const [getStarted, setGetStarted] = useState(false);
 	const [isFinished, setIsFinished] = useState(false);
-
+	
 
 	const toggleLeaderboard = () => {
 		setShowLeaderboard((prev) => !prev);
 	};
+
+	let numberOfQuestions = Questions.length;
 
 	return (
 		 <> 
@@ -37,9 +40,9 @@ function App() {
 					<div
 						className={`main-content ${showLeaderboard ? "" : "full-width"}`}
 					>
-						{!getStarted  && <Welcome setGetStarted={setGetStarted} />}
-						{(getStarted && !isFinished) && <QA setIsFinished={setIsFinished} />}
-						{isFinished && <Completion />}
+						{!getStarted  && <Welcome numberOfQuestions={numberOfQuestions} setGetStarted={setGetStarted} />}
+						{(getStarted && !isFinished) && <QA numberOfQuestions={numberOfQuestions} setIsFinished={setIsFinished} />}
+						{isFinished && <Completion  />}
 					</div>
 					{showLeaderboard && (
 						<aside className="leaderboard-section">
